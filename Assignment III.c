@@ -8,7 +8,7 @@ struct Node {
     struct Node* next;      // Pointer to the next node in the list
 };
 
-// Function to create a new node with given data
+// Function to create a new node with the given data
 struct Node* createNode(int data) {
     // Allocate memory for the new node
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
@@ -47,7 +47,7 @@ struct Node* reverseList(struct Node* head) {
     struct Node* temp = NULL;    // Temporary pointer for swapping
     struct Node* current = head; // Pointer to traverse the list
     
-    // Swap next and prev for all nodes of doubly linked list
+    // Swap next and prev for all nodes of the doubly linked list
     while (current != NULL) {
         temp = current->prev;
         current->prev = current->next;
@@ -65,7 +65,7 @@ struct Node* reverseList(struct Node* head) {
 
 // Function to add two doubly linked lists representing numbers
 struct Node* addLists(struct Node* head1, struct Node* head2) {
-    // Reverse both lists to make addition easier
+    // Reverse both lists to make the addition easier
     head1 = reverseList(head1);
     head2 = reverseList(head2);
     
@@ -122,15 +122,15 @@ int main() {
     struct Node* list1 = NULL;
     struct Node* list2 = NULL;
     
-    // Create the first doubly linked list: 2 -> 5 -> 9 (representing 259)
-    insertEnd(&list1, 2);
+    // Create the first doubly linked list: 3 -> 5 -> 0 (representing 350)
+    insertEnd(&list1, 3);
     insertEnd(&list1, 5);
-    insertEnd(&list1, 9);
+    insertEnd(&list1, 0);
     
-    // Create the second doubly linked list: 3 -> 8 -> 1 (representing 381)
-    insertEnd(&list2, 3);
-    insertEnd(&list2, 8);
-    insertEnd(&list2, 1);
+    // Create the second doubly linked list: 2 -> 2 -> 5 (representing 225)
+    insertEnd(&list2, 2);
+    insertEnd(&list2, 2);
+    insertEnd(&list2, 5);
     
     // Print input lists
     printf("List 1: ");
